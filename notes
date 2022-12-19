@@ -1,0 +1,1196 @@
+
+#=========================================================================
+# seedsigner/src/seedsigner/helpers/ur2/
+#=========================================================================
+
+    seedsigner/src/seedsigner/helpers/ur2/bytewords.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/helpers/ur2/bytewords.py
+    
+    IMPORT: .utils
+    
+    Functions:
+    
+        decode_word(word, word_len)
+        def get_word(index)
+        def get_minimal_word(index)
+        def encode(buf, separator)
+        def add_crc(buf)
+        def encode_with_separator(buf, separator)
+        def encode_minimal(buf)
+        def decode(s, separator, word_len)
+    
+    Classes:
+    
+        Bytewords
+            def encode(style, bytes)
+            def decode(style, str)
+    
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    
+    seedsigner/src/seedsigner/helpers/ur2/cbor_lite.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/helpers/ur2/cbor_lite.py
+    
+    Functions:
+    
+        def bit_length(n)
+        def get_byte_length(value)
+        
+    Classes:
+    
+        CBOREncoder
+            def __init__(self)
+            def get_bytes(self)
+            def encodeTagAndAdditional(self, tag, additional)
+            def encodeTagAndValue(self, tag, value)
+            def encodeUnsigned(self, value)
+            def encodeNegative(self, value)
+            def encodeInteger(self, value)
+            def encodeBool(self, value)
+            def encodeBytes(self, value)
+            def encodeEncodedBytesPrefix(self, value)
+            def encodeEncodedBytes(self, value)
+            def encodeText(self, value)
+            def encodeArraySize(self, value)
+            def encodeMapSize(self, value)
+        
+        CBORDecoder
+            def __init__(self, buf)
+            def decodeTagAndAdditional(self, flags=Flag_None)
+            def decodeTagAndValue(self, flags)
+            def decodeUnsigned(self, flags=Flag_None)
+            def decodeNegative(self, flags=Flag_None)
+            def decodeInteger(self, flags=Flag_None)
+            def decodeBool(self, flags=Flag_None)
+            def decodeBytes(self, flags=Flag_None)
+            def decodeEncodedBytesPrefix(self, flags=Flag_None)
+            def decodeEncodedBytes(self, flags=Flag_None)
+            def decodeText(self, flags=Flag_None)
+            def decodeArraySize(self, flags=Flag_None)
+            def decodeMapSize(self, flags=Flag_None)
+    
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    
+    seedsigner/src/seedsigner/helpers/ur2/constants.py
+    
+
+#=========================================================================
+# seedsigner/src/seedsigner/helpers/ur2/
+#=========================================================================
+
+    seedsigner/src/seedsigner/helpers/ur2/bytewords.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/helpers/ur2/bytewords.py
+    
+    IMPORT: .utils
+    
+    Functions:
+    
+        decode_word(word, word_len)
+        def get_word(index)
+        def get_minimal_word(index)
+        def encode(buf, separator)
+        def add_crc(buf)
+        def encode_with_separator(buf, separator)
+        def encode_minimal(buf)
+        def decode(s, separator, word_len)
+    
+    Classes:
+    
+        Bytewords
+            def encode(style, bytes)
+            def decode(style, str)
+    
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    
+    seedsigner/src/seedsigner/helpers/ur2/cbor_lite.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/helpers/ur2/cbor_lite.py
+    
+    Functions:
+    
+        def bit_length(n)
+        def get_byte_length(value)
+        
+    Classes:
+    
+        CBOREncoder
+            def __init__(self)
+            def get_bytes(self)
+            def encodeTagAndAdditional(self, tag, additional)
+            def encodeTagAndValue(self, tag, value)
+            def encodeUnsigned(self, value)
+            def encodeNegative(self, value)
+            def encodeInteger(self, value)
+            def encodeBool(self, value)
+            def encodeBytes(self, value)
+            def encodeEncodedBytesPrefix(self, value)
+            def encodeEncodedBytes(self, value)
+            def encodeText(self, value)
+            def encodeArraySize(self, value)
+            def encodeMapSize(self, value)
+        
+        CBORDecoder
+            def __init__(self, buf)
+            def decodeTagAndAdditional(self, flags=Flag_None)
+            def decodeTagAndValue(self, flags)
+            def decodeUnsigned(self, flags=Flag_None)
+            def decodeNegative(self, flags=Flag_None)
+            def decodeInteger(self, flags=Flag_None)
+            def decodeBool(self, flags=Flag_None)
+            def decodeBytes(self, flags=Flag_None)
+            def decodeEncodedBytesPrefix(self, flags=Flag_None)
+            def decodeEncodedBytes(self, flags=Flag_None)
+            def decodeText(self, flags=Flag_None)
+            def decodeArraySize(self, flags=Flag_None)
+            def decodeMapSize(self, flags=Flag_None)
+    
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    
+    seedsigner/src/seedsigner/helpers/ur2/constants.py
+    
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    
+    seedsigner/src/seedsigner/helpers/ur2/crc32.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/helpers/ur2/crc32.py
+    
+    IMPORT: .constants
+    
+    Functions:
+    
+        def bit_length(n)
+        def crc32(buf)
+        def crc32n(buf)
+    
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    
+    seedsigner/src/seedsigner/helpers/ur2/fountain_decoder.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/helpers/ur2/fountain_decoder.py
+    
+    IMPORT: .fountain_utils, .utils
+    
+    Classes:
+    
+        InvalidPart(Exception)
+        InvalidChecksum(Exception)
+        FountainDecoder
+            Part
+                def __init__(self, indexes, data)
+                def from_encoder_part(cls, p)
+                def indexes(self)
+                def data(self)
+                def is_simple(self)
+                def index(self)
+            
+            def __init__(self)
+            def expected_part_count(self)
+            def is_success(self)
+            def is_failure(self)
+            def is_complete(self)
+            def result_message(self)
+            def result_error(self)
+            def estimated_percent_complete(self)
+            def receive_part(self, encoder_part)
+            def join_fragments(fragments, message_len)
+            def enqueue(self, p)
+            def process_queue_item(self)
+            def reduce_mixed_by(self, p)
+            def reduce_part_by_part(self, a, b)
+            def process_simple_part(self, p)
+            def process_mixed_part(self, p)
+            def validate_part(self, p)
+            def indexes_to_string(self, indexes)
+            def result_description(self)
+            def print_part(self, p)
+            def print_part_end(self)
+            def print_state(self)
+    
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    
+    seedsigner/src/seedsigner/helpers/ur2/fountain_encoder.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/helpers/ur2/fountain_encoder.py
+    
+    IMPORT: math, .cbor_lite, .fountain_utils, .utils, .constants
+    
+    Classes:
+    
+        InvalidHeader(Exception)
+        Part
+            def __init__(self, seq_num, seq_len, message_len, checksum, data)
+            def from_cbor(cbor_buf)
+            def cbor(self)
+            def seq_num(self)
+            def seq_len(self)
+            def message_len(self)
+            def checksum(self)
+            def data(self)
+            def description(self)
+        
+        FountainEncoder
+            def __init__(self, message, max_fragment_len, first_seq_num = 0, min_fragment_len = 10)
+            def find_nominal_fragment_length(message_len, min_fragment_len, max_fragment_len)
+            def partition_message(message, fragment_len)
+            def last_part_indexes(self)
+            def seq_len(self)
+            def is_complete(self)
+            def is_single_part(self)
+            def next_part(self)
+            def mix(self, indexes)
+    
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    
+    seedsigner/src/seedsigner/helpers/ur2/fountain_utils.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/helpers/ur2/fountain_utils.py
+    
+    IMPORT: .random_sampler, .utils, .xoshiro256
+    
+    Functions:
+    
+        def shuffled(items, rng)
+        def choose_degree(seq_len, rng)
+        def choose_fragments(seq_num, seq_len, checksum)
+        def contains(set_or_list, el)
+        def is_strict_subset(a, b)
+        def set_difference(a, b)
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    
+    seedsigner/src/seedsigner/helpers/ur2/random_sampler.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/helpers/ur2/random_sampler.py
+
+    Classes:
+    
+        RandomSampler
+            def __init__(self, probs)
+            def next(self, rng_func)
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    
+    seedsigner/src/seedsigner/helpers/ur2/ur.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/helpers/ur2/ur.py
+    
+    IMPORT: .utils
+    
+    Classes:
+    
+        InvalidType(Exception)
+        UR
+            def __init__(self, type, cbor)
+            def __eq__(self, obj)
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    
+    seedsigner/src/seedsigner/helpers/ur2/ur_decoder.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/helpers/ur2/ur_decoder.py
+    
+    IMPORT: .ur, .fountain_encoder, .fountain_decoder, .bytewords, .utils
+    
+    Classes:
+    
+        InvalidScheme(Exception)
+        InvalidType(Exception)
+        InvalidPathLength(Exception)
+        InvalidSequenceComponent(Exception)
+        InvalidFragment(Exception)
+        URDecoder
+            def __init__(self)
+            def decode(str)
+            def decode_by_type(type, body)
+            def parse(str)
+            def parse_sequence_component(str)
+            def validate_part(self, type)
+            def receive_part(self, str)
+            def expected_type(self)
+            def expected_part_count(self)
+            def received_part_indexes(self)
+            def last_part_indexes(self)
+            def processed_parts_count(self)
+            def estimated_percent_complete(self)
+            def is_success(self)
+            def is_failure(self)
+            def is_complete(self)
+            def result_message(self)
+            def result_error(self)
+    
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    
+    seedsigner/src/seedsigner/helpers/ur2/ur_encoder.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/helpers/ur2/ur_encoder.py
+    
+    IMPORT: .fountain_encoder, .bytewords
+    
+    Classes:
+    
+        UREncoder
+            def __init__(self, ur, max_fragment_len, first_seq_num = 0, min_fragment_len = 10)
+            def encode(ur)
+            def last_part_indexes(self)
+            def is_complete(self)
+            def is_single_part(self)
+            def next_part(self)
+            def encode_part(type, part)
+            def encode_uri(scheme, path_components)
+            def encode_ur(path_components)
+        
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    
+    seedsigner/src/seedsigner/helpers/ur2/utils.py
+    
+    IMPORT: .crc32
+    
+    Functions:
+    
+        def crc32_bytes(buf)
+        def crc32_int(buf)
+        def data_to_hex(buf)
+        def int_to_bytes(n)
+        def bytes_to_int(buf)
+        def string_to_bytes(s)
+        def is_ur_type(ch)
+        def partition(s, n)
+        def split(buf, count)
+        def join_lists(lists)
+        def join_bytes(list_of_ba)
+        def xor_into(target, source)
+        def xor_with(a, b)
+        def take_first(s, count)
+        def drop_first(s, count)
+    
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    
+    seedsigner/src/seedsigner/helpers/ur2/xoshiro256.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/helpers/ur2/xoshiro256.py
+    
+    IMPORT: uhashlib, .utils, .constants
+    
+    Functions: def rotl(x, k)
+    
+    Classes:
+    
+        Xoshiro256
+            def __init__(self, arr = None)
+            def _set_s(self, arr)
+            def _hash_then_set_s(self, buf)
+            def from_int8_array(cls, arr)
+            def from_bytes(cls, buf)
+            def from_crc32(cls, crc32)
+            def from_string(cls, s)
+            def next(self)
+            def next_double(self)
+            def next_int(self, low, high)
+            def next_byte(self)
+            def next_data(self, count)
+            def jump(self)
+            def long_jump(self)
+
+#=========================================================================
+# seedsigner/src/seedsigner/helpers/
+#=========================================================================
+
+    seedsigner/src/seedsigner/helpers/embit_utils.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/helpers/embit_utils.py
+
+    IMPORT: embit, seedsigner
+
+    Functions:
+
+        def get_standard_derivation_path(network: str = SettingsConstants.MAINNET, wallet_type: str = SettingsConstants.SINGLE_SIG, script_type: str = SettingsConstants.NATIVE_SEGWIT) -> str
+        def get_xpub(seed_bytes, derivation_path: str, embit_network: str = "main") -> HDKey
+        def get_single_sig_address(xpub: HDKey, script_type: str = SettingsConstants.NATIVE_SEGWIT, index: int = 0, is_change: bool = False, embit_network: str = "main") -> str
+        def get_multisig_address(descriptor: Descriptor, index: int = 0, is_change: bool = False, embit_network: str = "main")
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    seedsigner/src/seedsigner/helpers/mnemonic_generation.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/helpers/mnemonic_generation.py
+
+    IMPORT: hashlib, unicodedata, embit, typing, seedsigner
+
+    Functions:
+
+        def calculate_checksum(mnemonic: list, wordlist_language_code: str) -> List[str]
+        def generate_mnemonic_from_bytes(entropy_bytes) -> List[str]
+        def generate_mnemonic_from_dice(roll_data: str) -> List[str]
+        def generate_mnemonic_from_image(image) -> List[str]
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    seedsigner/src/seedsigner/helpers/qr.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/helpers/qr.py
+
+    IMPORT: qrcode, PIL, subprocess
+
+    Classes:
+
+        QR
+            def __init__(self) -> None
+            def qrimage(self, data, width=240, height=240, border=3, style=None, background_color="#444")
+            def qrimage_io(self, data, width=240, height=240, border=3, background_color="808080")
+
+#=========================================================================
+# seedsigner/src/seedsigner/models/
+#=========================================================================
+
+    seedsigner/src/seedsigner/models/__init__.py
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    seedsigner/src/seedsigner/models/decode_qr.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/models/decode_qr.py
+
+    IMPORT: base64, json, logging, re, binascii, enum, embit, pyzbar, urtypes, seedsigner
+
+    Classes:
+
+        DecodeQRStatus(IntEnum)
+        DecodeQR
+            def __init__(self, wordlist_language_code: str = SettingsConstants.WORDLIST_LANGUAGE__ENGLISH)
+            def add_image(self, image)
+            def add_data(self, data)
+            def get_psbt(self)
+            def get_data_psbt(self)
+            def get_base64_psbt(self)
+            def get_seed_phrase(self)
+            def get_settings_data(self)
+            def get_settings_config_name(self)
+            def get_address(self)
+            def get_address_type(self)
+            def get_wallet_descriptor(self)
+            def get_percent_complete(self) -> int
+            def is_complete(self) -> bool
+            def is_invalid(self) -> bool
+            def is_psbt(self) -> bool
+            def is_seed(self)
+            def is_json(self)
+            def is_address(self)
+            def is_wallet_descriptor(self)
+            def is_settings(self)
+            def extract_qr_data(image, is_binary:bool = False) -> str
+            def detect_segment_type(s, wordlist_language_code=None)
+            def is_base64(s)
+            def is_base64_psbt(s)
+            def is_base43_psbt(s)
+            def base43_decode(s)
+            def is_bitcoin_address(s)
+            def multisig_setup_file_to_descriptor(text) -> str
+        
+        BaseQrDecoder
+            def __init__(self)
+            def is_complete(self) -> bool
+            def add(self, segment, qr_type)
+        
+        BaseSingleFrameQrDecoder(BaseQrDecoder)
+            def __init__(self)
+        
+        BaseAnimatedQrDecoder(BaseQrDecoder)
+            def __init__(self)
+            def current_segment_num(self, segment) -> int
+            def total_segment_nums(self, segment) -> int
+            def parse_segment(self, segment) -> str
+            def is_valid(self) -> bool
+            def add(self, segment, qr_type=None)
+        
+        SpecterPsbtQrDecoder(BaseAnimatedQrDecoder)
+            def get_base64_data(self) -> str
+            def get_data(self)
+            def current_segment_num(self, segment) -> int
+            def total_segment_nums(self, segment) -> int
+            def parse_segment(self, segment) -> str
+        
+        Base64PsbtQrDecoder(BaseSingleFrameQrDecoder)
+            def add(self, segment, qr_type=QRType.PSBT__BASE64)
+            def get_base64_data(self) -> str
+            def get_data(self)
+        
+        Base43PsbtQrDecoder(BaseSingleFrameQrDecoder)
+            def add(self, segment, qr_type=QRType.PSBT__BASE43)
+            def get_data(self)
+        
+        SeedQrDecoder(BaseSingleFrameQrDecoder)
+            def __init__(self, wordlist_language_code)
+            def add(self, segment, qr_type=QRType.SEED__SEEDQR)
+            def get_seed_phrase(self)
+            def is_12_or_24_word_phrase(self)
+        
+        SettingsQrDecoder(BaseSingleFrameQrDecoder)
+            def __init__(self)
+            def add(self, segment, qr_type=QRType.SETTINGS)
+        
+        BitcoinAddressQrDecoder(BaseSingleFrameQrDecoder)
+            def __init__(self)
+            def add(self, segment, qr_type=QRType.BITCOIN_ADDRESS)
+            def get_address(self)
+            def get_address_type(self)
+        
+        SpecterWalletQrDecoder(BaseAnimatedQrDecoder)
+            def validate_json(self) -> str
+            def is_valid(self)
+            def get_wallet_descriptor(self) -> str
+            def is_complete(self) -> bool
+            def current_segment_num(self, segment) -> int
+            def total_segment_nums(self, segment) -> int
+            def parse_segment(self, segment) -> str
+        
+        GenericWalletQrDecoder(BaseSingleFrameQrDecoder)
+            def __init__(self)
+            def add(self, segment, qr_type=QRType.WALLET__GENERIC)
+            def get_wallet_descriptor(self)
+        
+        MultiSigConfigFileQRDecoder(GenericWalletQrDecoder)
+            def add(self, segment, qr_type=QRType.WALLET__CONFIGFILE)
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    seedsigner/src/seedsigner/models/encode_qr.py
+    https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/models/encode_qr.py
+
+    IMPORT: math, embit, binascii, dataclasses, typing, seedsigner, urtypes
+
+    Classes:
+
+        EncodeQR
+            def __post_init__(self)
+            def total_parts(self) -> int
+            def next_part(self)
+            def part_to_image(self, part, width=240, height=240, border=3)
+            def next_part_image(self, width=240, height=240, border=3, background_color="bdbdbd")
+            def is_complete(self)
+            def get_qr_density(self)
+            def get_qr_type(self)
+        
+        BaseQrEncoder
+            def seq_len(self)
+            def next_part(self) -> str
+            def is_complete(self)
+            def _create_parts(self)
+        
+        BasePsbtQrEncoder(BaseQrEncoder)
+            def __init__(self, psbt: PSBT)
+        
+        UrPsbtQrEncoder(BasePsbtQrEncoder)
+            def __init__(self, psbt, qr_density)
+            def seq_len(self)
+            def next_part(self) -> str
+            def is_complete(self)
+        
+        SpecterPsbtQrEncoder(BasePsbtQrEncoder)
+            def __init__(self, psbt, qr_density)
+            def _create_parts(self)
+            def seq_len(self)
+            def next_part(self) -> str
+            def is_complete(self)
+        
+        SeedQrEncoder(BaseQrEncoder)
+            def __init__(self, seed_phrase: List[str], wordlist_language_code: str)
+            def seq_len(self)
+            def next_part(self)
+            def is_complete(self)
+        
+        CompactSeedQrEncoder(SeedQrEncoder)
+            def next_part(self)
+        
+        BitcoinAddressEncoder(BaseQrEncoder)
+            def __init__(self, address: str)
+            def seq_len(self)
+            def next_part(self)
+            def is_complete(self)
+        
+        XpubQrEncoder(BaseQrEncoder)
+            def __init__(self, seed_phrase, passphrase, derivation, network, wordlist_language_code)
+            def _create_parts(self)
+            def next_part(self) -> str
+            def seq_len(self)
+            def is_complete(self)
+        
+        SpecterXPubQrEncoder(XpubQrEncoder)
+            def __init__(self, qr_density, **kwargs)
+            def _create_parts(self)
+            def next_part(self) -> str
+        
+        UrXpubQrEncoder(XpubQrEncoder)
+            def __init__(self, qr_density, **kwargs)
+            def derivation_to_keypath(path: str) -> list
+            def seq_len(self)
+            def next_part(self) -> str
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    seedsigner/src/seedsigner/models/psbt_parser.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/models/psbt_parser.py
+
+    IMPORT: binascii, embit, io, typing, seedsigner
+
+    Classes:
+    
+        PSBTParser()
+            def __init__(self, p: PSBT, seed: Seed, network: str = SettingsConstants.MAINNET)
+            def get_change_data(self, change_num: int) -> dict
+            def num_change_outputs(self)
+            def is_multisig(self)
+            def num_destinations(self)
+            def _set_root(self)
+            def parse(self)
+            def _parse_inputs(self)
+            def _parse_outputs(self)
+            def trim(tx)
+            def sig_count(tx)
+            def _get_policy(scope, scriptpubkey, xpubs)
+            def _parse_multisig(sc)
+            def _get_cosigners(pubkeys, derivations, xpubs)
+            def get_input_fingerprints(psbt: PSBT) -> List[str]
+            def has_matching_input_fingerprint(psbt: PSBT, seed: Seed, network: str = SettingsConstants.MAINNET)
+            def verify_multisig_output(self, descriptor: Descriptor, change_num: int) -> bool
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    seedsigner/src/seedsigner/models/qr_type.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/models/qr_type.py
+
+    Classes: QRType
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    seedsigner/src/seedsigner/models/seed.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/models/seed.py
+
+    IMPORT: unicodedata, binascii, embit, typing, seedsigner, hashlib, hmac
+
+    Classes:
+
+        InvalidSeedException(Exception)
+        Seed
+            def __init__(self
+            def get_wordlist(wordlist_language_code: str = SettingsConstants.WORDLIST_LANGUAGE__ENGLISH) -> List[str]
+            def _generate_seed(self) -> bool
+            def mnemonic_str(self) -> str
+            def mnemonic_list(self) -> List[str]
+            def mnemonic_display_str(self) -> str
+            def mnemonic_display_list(self) -> List[str]
+            def passphrase(self)
+            def passphrase_display(self)
+            def set_passphrase(self, passphrase: str, regenerate_seed: bool = True)
+            def wordlist(self) -> List[str]
+            def set_wordlist_language_code(self, language_code: str)
+            def get_fingerprint(self, network: str = SettingsConstants.MAINNET) -> str
+            def get_xpub(self, wallet_path: str = '/', network: str = SettingsConstants.MAINNET)
+            def get_bip85_child_mnemonic(self, bip85_index: int, bip85_num_words: int, network: str = SettingsConstants.MAINNET)
+            def __eq__(self, other)
+        
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    seedsigner/src/seedsigner/models/seed_storage.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/models/seed_storage.py
+
+    IMPORT: typing, seedsigner
+
+    Classes:
+    
+        SeedStorage
+            def __init__(self) -> None
+            def set_pending_seed(self, seed: Seed)
+            def get_pending_seed(self) -> Seed
+            def finalize_pending_seed(self) -> int
+            def clear_pending_seed(self)
+            def validate_mnemonic(self, mnemonic: List[str]) -> bool
+            def num_seeds(self)
+            def pending_mnemonic(self) -> List[str]
+            def pending_mnemonic_length(self) -> int
+            def init_pending_mnemonic(self, num_words:int = 12)
+            def update_pending_mnemonic(self, word: str, index: int)
+            def get_pending_mnemonic_word(self, index: int) -> str
+            def get_pending_mnemonic_fingerprint(self, network: str = SettingsConstants.MAINNET) -> str
+            def convert_pending_mnemonic_to_pending_seed(self)
+            def discard_pending_mnemonic(self)
+        
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    seedsigner/src/seedsigner/models/settings.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/models/settings.py
+
+    IMPORT: json, os, typing, seedsigner, .singleton
+
+    Classes:
+    
+        Settings(Singleton)
+            def get_instance(cls)
+            def __str__(self)
+            def save(self)
+            def update(self, new_settings: dict, disable_missing_entries: bool = True)
+            def set_value(self, attr_name: str, value: any)
+            def get_value(self, attr_name: str)
+            def get_value_display_name(self, attr_name: str) -> str
+            def get_multiselect_value_display_names(self, attr_name: str) -> List[str]
+            def debug(self) -> bool
+            def microsd_handler(action)
+        
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    seedsigner/src/seedsigner/models/settings_definition.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/models/settings_definition.py
+
+    IMPORT: dataclasses, typing
+
+    Classes:
+
+        SettingsConstants
+            def map_network_to_embit(cls, network) -> str
+        
+        SettingsEntry
+            def __post_init__(self)
+            def selection_options_display_names(self) -> List[str]
+            def get_selection_option_value(self, i: int)
+            def get_selection_option_display_name(self, i: int) -> str
+            def get_selection_option_display_name_by_value(self, value) -> str
+            def get_selection_option_value_by_display_name(self, display_name: str)
+            def to_dict(self) -> dict
+        
+        SettingsDefinition
+            def get_settings_entries(cls, visibiilty: str = SettingsConstants.VISIBILITY__GENERAL) -> List[SettingsEntry]
+            def get_settings_entry(cls, attr_name) -> SettingsEntry
+            def parse_abbreviated_ini(cls, abbreviated_ini: str) -> dict
+            def get_defaults(cls) -> dict
+            def to_dict(cls) -> dict
+
+    if __name__ == "__main__":
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    seedsigner/src/seedsigner/models/singleton.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/models/singleton.py
+
+    Classes:
+
+        Singleton
+            def __init__(self)
+            def get_instance(cls)
+        
+        ConfigurableSingleton(Singleton)
+            def get_instance(cls)
+            def configure_instance(cls, config: any = None)
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    seedsigner/src/seedsigner/models/threads.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/models/threads.py
+
+    IMPORT: logging, threading
+
+    Classes:
+
+        BaseThread(Thread)
+            def __init__(self)
+            def start(self)
+            def stop(self)
+            def run(self)
+        
+        ThreadsafeCounter
+            def __init__(self, initial_value: int = 0)
+            def cur_count(self)
+            def increment(self, step: int = 1)
+            def set_value(self, value: int)
+
+
+#=========================================================================
+# seedsigner/src/seedsigner/views/
+#=========================================================================
+
+    seedsigner/src/seedsigner/views/__init__.py
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    seedsigner/src/seedsigner/views/psbt_views.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/views/psbt_views.py
+
+    IMPORT: logging, typing, embit, seedsigner, .view
+
+    Classes:
+
+        PSBTSelectSeedView(View)
+            def run(self)
+        
+        PSBTOverviewView(View)
+            def __init__(self)
+            def run(self)
+        
+        PSBTUnsupportedScriptTypeWarningView(View)
+            def run(self)
+        
+        PSBTNoChangeWarningView(View)
+            def run(self)
+        
+        PSBTMathView(View)
+            def run(self)
+        
+        PSBTAddressDetailsView(View)
+            def __init__(self, address_num, is_change=False)
+            def run(self)
+        
+        PSBTChangeDetailsView(View)
+            def __init__(self, change_address_num)
+            def run(self)
+        
+        PSBTAddressVerificationFailedView(View)
+            def __init__(self, is_change: bool = True, is_multisig: bool = False)
+            def run(self)
+        
+        PSBTFinalizeView(View)
+            def run(self)
+        
+        PSBTSignedQRDisplayView(View)
+            def run(self)
+        
+        PSBTSigningErrorView(View)
+            def run(self)
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    seedsigner/src/seedsigner/views/scan_views.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/views/scan_views.py
+
+    IMPORT: json,re, embit, seedsigner, .view
+
+    Classes:
+
+        ScanView(View)
+            def run(self)
+        
+        SettingsUpdatedView(View)
+            def __init__(self, config_name: str)
+            def run(self)
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    seedsigner/src/seedsigner/views/screensaver.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/views/screensaver.py
+
+    IMPORT: os, random, time, PIL, seedsigner
+
+    Classes:
+
+        LogoScreen(BaseScreen)
+            def __init__(self)
+            def get_random_partner(self) -> str
+        
+        OpeningSplashScreen(LogoScreen)
+            def start(self)
+        
+        ScreensaverScreen(LogoScreen)
+            def __init__(self, buttons)
+            def is_running(self)
+            def rand_increment(self)
+            def start(self)
+            def stop(self)
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    seedsigner/src/seedsigner/views/seed_views.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/views/seed_views.py
+
+    IMPORT: embit,random, time, binascii, embit, typing, seedsigner, .view
+
+    Classes:
+
+        SeedsMenuView(View)
+            def __init__(self)
+            def run(self)
+        
+        LoadSeedView(View)
+            def run(self)
+        
+        SeedMnemonicEntryView(View)
+            def __init__(self, cur_word_index: int = 0, is_calc_final_word: bool=False)
+            def run(self)
+        
+        SeedMnemonicInvalidView(View)
+            def __init__(self)
+            def run(self)
+        
+        SeedFinalizeView(View)
+            def __init__(self)
+            def run(self)
+            
+        
+        SeedAddPassphraseView(View)
+            def __init__(self)
+            def run(self)
+        
+        SeedReviewPassphraseView(View)
+            def __init__(self)
+            def run(self)
+        
+        SeedDiscardView(View)
+            def __init__(self, seed_num: int = None)
+            def run(self)
+        
+        SeedOptionsView(View)
+            def __init__(self, seed_num: int)
+            def run(self)
+        
+        SeedBackupView(View)
+            def __init__(self, seed_num)
+            def run(self)
+        
+        SeedExportXpubSigTypeView(View)
+            def __init__(self, seed_num: int)
+            def run(self)
+        
+        SeedExportXpubScriptTypeView(View)
+            def __init__(self, seed_num: int, sig_type: str)
+            def run(self)
+        
+        SeedExportXpubCustomDerivationView(View)
+            def __init__(self, seed_num: int, sig_type: str, script_type: str)
+            def run(self)
+        
+        SeedExportXpubCoordinatorView(View)
+            def __init__(self, seed_num: int, sig_type: str, script_type: str, custom_derivation: str = None)
+            def run(self)
+        
+        SeedExportXpubWarningView(View)
+            def __init__(self, seed_num: int, sig_type: str, script_type: str, coordinator: str, custom_derivation: str)
+            def run(self)
+        
+        SeedExportXpubDetailsView(View)
+            def __init__(self, seed_num: int, sig_type: str, script_type: str, coordinator: str, custom_derivation: str)
+            def run(self)
+        
+        SeedExportXpubQRDisplayView(View)
+            def __init__(self, seed_num: int, coordinator: str, derivation_path: str)
+            def run(self)
+        
+        SeedWordsWarningView(View)
+            def __init__(self, seed_num: int, bip85_data: dict = None)
+            def run(self)
+        
+        SeedWordsView(View)
+            def __init__(self, seed_num: int, bip85_data: dict = None, page_index: int = 0)
+            def run(self)
+        
+        SeedBIP85ApplicationModeView(View)
+            def __init__(self, seed_num: int)
+            def run(self)
+        
+        SeedBIP85SelectChildIndexView(View)
+            def __init__(self, seed_num: int, num_words: int)
+            def run(self)
+        
+        SeedWordsBackupTestPromptView(View)
+            def __init__(self, seed_num: int, bip85_data: dict = None)
+            def run(self)
+        
+        SeedWordsBackupTestView(View)
+            def __init__(self, seed_num: int, bip85_data: dict = None, confirmed_list: List[bool] = None, cur_index: int = None)
+            def run(self)
+        
+        SeedWordsBackupTestMistakeView(View)
+            def __init__(self, seed_num: int, bip85_data: dict = None, cur_index: int = None, wrong_word: str = None, confirmed_list: List[bool] = None)
+            def run(self)
+        
+        SeedWordsBackupTestSuccessView(View)
+            def __init__(self, seed_num: int)
+            def run(self)
+        
+        SeedTranscribeSeedQRFormatView(View)
+            def __init__(self, seed_num: int)
+            def run(self)
+        
+        SeedTranscribeSeedQRWarningView(View)
+            def __init__(self, seed_num: int, seedqr_format: str = QRType.SEED__SEEDQR, num_modules: int = 29)
+            def run(self)
+        
+        SeedTranscribeSeedQRWholeQRView(View)
+            def __init__(self, seed_num: int, seedqr_format: str, num_modules: int)
+            def run(self)
+        
+        SeedTranscribeSeedQRZoomedInView(View)
+            def __init__(self, seed_num: int, seedqr_format: str)
+            def run(self)
+        
+        SeedTranscribeSeedQRConfirmQRPromptView(View)
+            def __init__(self, seed_num: int)
+            def run(self)
+        
+        SeedTranscribeSeedQRConfirmScanView(View)
+            def __init__(self, seed_num: int)
+            def run(self)
+        
+        AddressVerificationStartView(View)
+            def __init__(self, address: str, script_type: str, network: str)
+            def run(self)
+        
+        AddressVerificationSigTypeView(View)
+            def run(self)
+        
+        SeedSingleSigAddressVerificationSelectSeedView(View)
+            def run(self)
+        
+        SeedAddressVerificationView(View)
+            def __init__(self, seed_num: int = None)
+            def run(self)
+            
+            BruteForceAddressVerificationThread(BaseThread)
+                def __init__(self, address: str, seed: Seed, descriptor: Descriptor, script_type: str, embit_network: str, derivation_path: str, threadsafe_counter: ThreadsafeCounter, verified_index: ThreadsafeCounter, verified_index_is_change: ThreadsafeCounter)
+                def run(self)
+        
+        AddressVerificationSuccessView(View)
+            def __init__(self, seed_num: int)
+            def run(self)
+        
+        LoadMultisigWalletDescriptorView(View)
+            def run(self)
+        
+        MultisigWalletDescriptorView(View)
+            def run(self)
+        
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    seedsigner/src/seedsigner/views/settings_views.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/views/settings_views.py
+
+    IMPORT: seedsigner, .view
+
+    Classes:
+
+        SettingsMenuView(View)
+            def __init__(self, visibility: str = SettingsConstants.VISIBILITY__GENERAL, selected_attr: str = None)
+            def run(self)
+        
+        SettingsEntryUpdateSelectionView(View)
+            def __init__(self, attr_name: str)
+            def run(self)
+        
+        IOTestView(View)
+            def run(self)
+        
+        DonateView(View)
+            def run(self)
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    seedsigner/src/seedsigner/views/tools_views.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/views/tools_views.py
+
+    IMPORT: hashlib, os, time, embit, PIL, seedsigner, .view
+
+    Classes:
+
+        ToolsMenuView(View)
+            def run(self)
+        
+        ToolsImageEntropyLivePreviewView(View)
+            def run(self)
+        
+        ToolsImageEntropyFinalImageView(View)
+            def run(self)
+        
+        ToolsImageEntropyMnemonicLengthView(View)
+            def run(self)
+        
+        ToolsDiceEntropyMnemonicLengthView(View)
+            def run(self)
+        
+        ToolsDiceEntropyEntryView(View)
+            def __init__(self, total_rolls: int)
+            def run(self)
+        
+        ToolsCalcFinalWordNumWordsView(View)
+            def run(self)
+        
+        ToolsCalcFinalWordFinalizePromptView(View)
+            def run(self)
+        
+        ToolsCalcFinalWordCoinFlipsView(View)
+            def run(self)
+        
+        ToolsCalcFinalWordShowFinalWordView(View)
+            def __init__(self, coin_flips=None)
+            def run(self)
+        
+        ToolsCalcFinalWordDoneView(View)
+            def run(self)
+        
+        ToolsAddressExplorerSelectSourceView(View)
+            def run(self)
+        
+        ToolsAddressExplorerAddressTypeView(View)
+            def __init__(self, seed_num: int = None, script_type: str = None, custom_derivation: str = None)
+            def run(self)
+        
+        ToolsAddressExplorerAddressListView(View)
+            def __init__(self, is_change: bool = False, start_index: int = 0, selected_button_index: int = 0)
+            def run(self)
+        
+        ToolsAddressExplorerAddressView(View)
+            def __init__(self, index: int, address: str, is_change: bool, start_index: int)
+            def run(self)
+        
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    seedsigner/src/seedsigner/views/view.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/views/view.py
+
+    IMPORT: dataclasses, typing, seedsigner
+
+    Classes:
+
+        BackStackView
+        View
+            def __init__(self) -> None
+            def run(self, **kwargs)
+        
+        Destination
+            def __repr__(self)
+            def run(self)
+            def __eq__(self, obj)
+            def __ne__(self, obj)
+        
+        MainMenuView(View)
+            def run(self)
+        
+        PowerOptionsView(View)
+            def run(self)
+        
+        RestartView(View)
+            def run(self)
+            DoResetThread(BaseThread)
+                def run(self)
+        
+        PowerOffView(View)
+            def run(self)
+            PowerOffThread(BaseThread)
+                def run(self)
+        
+        NotYetImplementedView(View)
+            def run(self)
+        
+        UnhandledExceptionView(View)
+            def __init__(self, error: List[str])
+            def run(self)
+
+
+#=========================================================================
+# seedsigner/src/seedsigner/
+#=========================================================================
+
+    seedsigner/src/seedsigner/controller.py
+    https://github.com/SeedSigner/seedsigner/blob/9e6d9ea36d7de2d7c71246b35cf5c6d6e579a2db/src/seedsigner/controller.py
+
+    IMPORT: logging, traceback, os, embit, PIL, typing, seedsigner, .models
+
+    Classes:
+
+        BackStack(List[Destination])
+            def __repr__(self)
+        
+        Controller(Singleton)
+            def get_instance(cls)
+            def configure_instance(cls, disable_hardware=False)
+            def camera(self)
+            def get_seed(self, seed_num: int) -> Seed
+            def discard_seed(self, seed_num: int)
+            def pop_prev_from_back_stack(self)
+            def clear_back_stack(self)
+            def start(self) -> None
+            def run(self, some_arg, other_arg)
+            def run(self)
+            def start_screensaver(self)
+            def handle_exception(self, e) -> Destination
