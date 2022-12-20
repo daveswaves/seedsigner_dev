@@ -1,0 +1,2 @@
+# display line numbers and recursive search (--exclude_dir=DIR)
+alias my_grep='grep -nR  --exclude=decode_qr.py \"TEXT\" FOLDER/'
