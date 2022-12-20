@@ -10,6 +10,12 @@ from embit import bip39
 
 def generate_mnemonic_from_dice(roll_data: str) -> List[str]:
     entropy_bytes = hashlib.sha256(roll_data.encode()).digest()
+    hex_entropy_bytes = hashlib.sha256(roll_data.encode()).hexdigest()
+    
+    # Display 64 bit hash (hexadecimal)
+    print(hex_entropy_bytes)
+    print(type(hex_entropy_bytes.encode()))
+    print(type(entropy_bytes))
 
     if len(roll_data) == 50:
         # 12-word mnemonic; only use 128bits / 16 bytes
@@ -26,6 +32,7 @@ def dice_rolls():
 	
 	mnemonic = generate_mnemonic_from_dice(dice_rolls)
 	
+	# Display seed phrase
 	print(mnemonic)
 
 dice_rolls()

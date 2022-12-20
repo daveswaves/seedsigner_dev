@@ -20,7 +20,9 @@ print(data_spc)
 print(data_str)
 # print(bip39.WORDLIST[0])
 
+'''
 for num, word in enumerate(bip39.WORDLIST):
    print(f"{num}: {word}")
+'''
 
 # Enter data_str to the following QR Code Generator: https://www.the-qrcode-generator.com/
