@@ -25,9 +25,16 @@ for word in seed_phrase:
 qr = qrcode.QRCode(version=1, box_size=10, border=4)
 qr.add_data(data)
 qr.make()
-img = qr.make_image(fill_color="white", back_color="black")
+img = qr.make_image(fill_color="white", back_color="black").resize((370,370))
 img.save("qr_seed.png")
 
+'''
+120,120
+240,240
+370,370 # default
+480,480
+700,700
+'''
 
 '''
 qr = qrcode.QRCode( version=1, error_correction=qrcode.constants.ERROR_CORRECT_L, box_size=5, border=3)
