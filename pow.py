@@ -2,10 +2,13 @@ import hashlib
 # import embit
 # from embit import bip39
 
-for i in range(0, 100000000):
+
+diff = 3
+leading_zeros = '0'*diff
+for i in range(0, 100_000_000):
     hash_fmt = hashlib.sha256( str(i).encode() ).hexdigest()
     
-    if '0000000' == hash_fmt[0:7]:
+    if leading_zeros == hash_fmt[0:diff]:
         print(hash_fmt)
         break
     
