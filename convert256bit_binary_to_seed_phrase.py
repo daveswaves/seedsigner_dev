@@ -5,11 +5,20 @@ import embit # pip3 install embit
 from embit import bip39
 import unicodedata
 import hashlib
+import qrcode
 
 '''
 BIP39 basics: generating mnemonic and seed from entropy (bitcoin python) https://youtu.be/q_GgEHedfuI
+https://tv.bit2me.com/bip39-basics-generating-mnemonic-and-seed-from-entropy-bitcoin-python/
+https://github.com/tongokongo?tab=repositories
+
 https://allprivatekeys.com/mnemonic-code-converter
 https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki
+
+https://github.com/scgbckbone/btc-hd-wallet
+
+Can Someone Guess My Crypto Private Key? [From Sand, to Molecules, to the Observable Universe] - aantonop
+https://youtu.be/2eZ5DP2P5As
 '''
 
 bits = 256
@@ -75,6 +84,18 @@ bin_seed = hashlib.pbkdf2_hmac("sha512", mnemonic, passphrase, 2048)
 bip39seed = binascii.hexlify(bin_seed[:64])
 
 print(bip39seed)
+
+data = ""
+for index in bip39seed:
+# for index in index_list:
+    data += str("%04d" % int(index))
+
+qr = qrcode.QRCode(version=1, box_size=10, border=4)
+qr.add_data(data)
+qr.make()
+img = qr.make_image(fill_color="white", back_color="black").resize((370,370))
+img.save("qr_seed.png")
+
 
 '''
 Goto https://allprivatekeys.com/mnemonic-code-converter
